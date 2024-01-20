@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display">display</div>
+    <div id="numbers">
+       <button>1</button>
+       <button>2</button>
+       <button>3</button>
+       <button>4</button>
+       <button>5</button>
+       <button>6</button>
+       <button>7</button>
+       <button>8</button>
+       <button>9</button>
+       <button>0</button>
+    </div>
+    <div id="operaters">
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+        <button>/</button>
+    </div>
+    <button id="equal">=</button>
+</body>
+</html>
+<script>
+    let numbers = document.querySelectorAll('#numbers > button');
+    let operaters = document.querySelectorAll('#operaters > button');
+    let display = document.getElementById('display');
+    let equal = document.getElementById('equal');
+    let firstNumber = "";
+    let secondNumber = "";
+    isfirstnumber = true; 
+    isoperater = "";
+    equal.addEventListener('click',function()
+    { 
+        display.innerHTML = calculate(firstNumber,secondNumber, isoperater)
+    })
+    for(let i=0; i<numbers.length; i++){
+        numbers[i].addEventListener('click',function()
+        {
+            if(isfirstnumber == true){
+                firstNumber += numbers[i].innerHTML;
+                display.innerHTML = firstNumber;
+            }
+            else{
+                secondNumber += numbers[i].innerHTML;
+                display.innerHTML = secondNumber;
+            }
+        })
+    }        
+    for(let i=0; i<operaters.length; i++){
+        operaters[i].addEventListener('click',function()
+        {
+           isfirstnumber = false;
+           isoperater = operaters[i].innerText;
+        })
+    }
+    function calculate(firstNumber, secondNumber, isoperater){
+        switch(isoperater)
+        {
+            case "+":
+                return Number(firstNumber) + Number(secondNumber);
+            case "-":
+                return Number(firstNumber) - Number(secondNumber);
+            case "*":
+                return Number(firstNumber) * Number(secondNumber);
+            case "/": 
+                return Number(firstNumber) / Number(secondNumber);           
+        }
+    }
+</script>
