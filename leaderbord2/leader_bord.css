@@ -1,0 +1,73 @@
+button{
+    height: 70px;
+    width: 70px;
+    font-size: xx-large;
+    margin: 10px;
+    border-radius: 5px;
+}
+.green{
+    background-color: rgb(37, 100, 37);
+}
+body{
+    text-align: center;
+}
+.box{
+    display: flex;
+    text-align: center;
+    font-size: xx-large;
+}
+#min{
+    height: 60px;
+    width: 100px;
+    background-color: rgb(173, 34, 34);
+    margin-left: 36%;
+    text-align: center;
+    padding-top: 25px;
+    border: 2px solid black;
+}
+#max{
+    height: 60px;
+    width: 100px;
+    background-color: rgb(34, 120, 22);
+    margin-left: 160px;
+    text-align: center;
+    padding-top: 25px;
+    border: 2px solid black;
+}
+#value{
+    font-size: xx-large;
+    display: flex;
+}
+.values{
+   margin-left: 448px;
+}
+.valuess{
+    margin-left: 195px;
+}
+.score{
+    font-size: xx-large;
+    margin-top: -10px;
+}
+#inputbox{
+    height: 80px;
+    width: 250px;
+    margin-top: -15px;
+    font-size: xx-large;
+    text-align: center;
+    color: black;
+    background-color: rgb(155, 166, 176); 
+}
+.red{
+    background-color: rgb(156, 71, 40);
+}
+#zero{
+    background-color: purple;
+    color: aliceblue;
+}
+#enter{
+    height: 50px;
+    width: 250px;
+   background-color: black;
+    font-size: xx-large;
+    color: white;
+}
