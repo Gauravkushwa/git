@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello EveryOne</h1>
+</body>
+</html>
+<script>
+     function Author(name,birthYear,nationality){
+     this.name = name;
+     this.birthYear = birthYear;
+     this.nationality = nationality;
+    }
+   // The Book constructor should take title, author (an Author object), genre, and price as arguments.
+    function Book(title,Author,genre,price){
+        this.title = title;
+        this.Author = Author;
+        this.genre = genre;
+        this.price = price;
+        store = function(){
+         console.log(this);
+        }
+    }
+    Book.prototype.getBookInfo = function(){
+        console.log(`Title: ${this.title}`);
+        console.log(`Author Name: ${this.Author.name}`);
+        console.log(`Gerne: ${this.genre}`);
+        console.log(`Price: ${this.price}`);
+    }
+    let author1 = new Author("KabeerDas",1398,"Indian")
+    let author2 = new Author("KaliDas",657,"Indian");
+
+    let book1 = new Book("Beejak",author1,"simple and saras",1500);
+    let book2 = new Book("MeghDutam",author2,"simple and sweet",1800);
+
+    book1.getBookInfo();
+    book2.getBookInfo();
+
+
+</script>
