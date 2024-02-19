@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Constraction Function</h1>
+</body>
+</html>
+<script>
+    function BankAccount(acountNo,name,type,balance){
+      this.acountNo = acountNo;
+      this.name = name;
+      this.type = type;
+      this.balance = balance;
+      this.status = true;
+    }
+    BankAccount.prototype.deposit = function(amount){
+        if(amount>0){
+            this.balance += amount;
+            console.log(`name: ${this.name},Deposit:${amount},updated balance:${this.balance}`);
+        }
+        else{
+            console.log("Invailed Amount");
+        }
+    }
+    BankAccount.prototype.widraval = function(amount){
+        if(this.balance > amount){
+            this.balance -= amount
+            console.log(`widraw Amount${this.amount},updated balance:${this.balance}`);
+        }
+        else{
+            console.log("No emough Amount in your Account");
+        }
+        BankAccount.prototype.checkBalance = function(){
+            console.log(`Your Balance: ${this.balance}`);
+        }
+        BankAccount.prototype.isActive = function(){
+            return this.status;
+        }
+    }
+
+//     function getTotalBalance(accounts){
+//     let TotalBalance = 0;
+//     for (let account of accounts){
+//     if (account.isActive()){
+//         TotalBalance += account.balance;
+//     }
+//    }
+//   }
+function getTotalBalance(accounts) {
+    let totalBalance = 0;
+    for (let account of accounts) {
+        if (account.isActive()) {
+            totalBalance += account.balance;
+        }
+    }
+    return totalBalance;
+}
+
+  let  person1 = new BankAccount(80026316566 , "Ranjeet","saving",5000);
+  let  person2 = new BankAccount(800546689, "Gaurav","V VIP",7000);
+  let person3 = new BankAccount(800987579, "Subhash", "current",6000);
+
+  person1.deposit(500);
+  person1.widraval(1800);
+  person1.checkBalance();
+  person1.isActive()
+
+  person2.deposit(800);
+  person2.widraval(2500);
+  person2.checkBalance();
+  person2.isActive();
+
+  person3.deposit(700);
+  person3.widraval(1500);
+  person3.checkBalance();
+  person3.isActive();
+
+  // check Acount Status method
+  console.log("Ranjeet Account status:",person1.isActive());
+  console.log( 'Gaurav Account status:',person2.isActive());
+  console.log('Subhash Account status:',person3.isActive());
+
+  
+  let totalAmount = [person1 , person2 , person3]
+  console.log("all balance of active acount:",getTotalBalance(totalAmount));
+</script>
